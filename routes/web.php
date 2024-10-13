@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Affiliation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AffiliationController::class, 'showForm']);
+
+// 動的な選択肢を取得するためのルート
+Route::get('/department', [AffiliationController::class, 'getDepartment']);
+Route::get('/major', [AffiliationController::class, 'getMajor']);
