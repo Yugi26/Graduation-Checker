@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <h1>学群・学類・専攻の選択</h1>
+    <h1>学群・学類・専攻の選択（自動テスト）</h1>
     <form action="/check" method="POST" enctype="multipart/form-data">
         @csrf
 
