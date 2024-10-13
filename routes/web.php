@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AffiliationController::class, 'showForm']);
 
 // 動的な選択肢を取得するためのルート
-Route::get('/department', [AffiliationController::class, 'getDepartment']);
-Route::get('/major', [AffiliationController::class, 'getMajor']);
+Route::get('/department', [AffiliationController::class, 'getDepartments']);
+Route::get('/major', [AffiliationController::class, 'getMajors']);

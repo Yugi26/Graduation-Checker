@@ -9,7 +9,7 @@ class Affiliation extends Model
 {
     use HasFactory;
     // 仮の学群データ
-    public static function getFaculity()
+    public static function getFaculities()
     {
         return [
             '情報学群' => ['情報科学類', '知識情報・図書館学類'],
@@ -18,15 +18,15 @@ class Affiliation extends Model
     }
 
     // 学群に紐づく学類を取得
-    public static function getDepartment($faculity)
+    public static function getDepartments($faculity)
     {
-        $data = self::getFaculity();
+        $data = self::getFaculities();
 
         return $data[$faculity] ?? [];
     }
 
     // 学類に紐づく専攻を取得
-    public static function getMajor($department)
+    public static function getMajors($department)
     {
         $data = [
             '情報科学類' => ['情報科学専攻', '情報システム専攻'],
@@ -34,7 +34,7 @@ class Affiliation extends Model
             '国際関係学類' => ['国際関係学専攻'],
             '社会学類' => ['社会学専攻']
         ];
-        
+
         return $data[$department] ?? [];
     }
 }
