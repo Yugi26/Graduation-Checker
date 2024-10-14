@@ -47,13 +47,18 @@
             $('#faculty').on('change', function() {
                 const faculty = $(this).val();
                 if (faculty) {
-                    $.get('/departments', { faculty: faculty }, function(data) {
-                        $('#department').empty().append('<option value="">学類を選択</option>');
-                        data.forEach(function(department) {
-                            $('#department').append(`<option value="${department}">${department}</option>`);
+                    $.get('/departments', { faculty: faculty })
+                        .done(function(data) {
+                            console.log(data); // データの確認
+                            $('#department').empty().append('<option value="">学類を選択</option>');
+                            data.forEach(function(department) {
+                                $('#department').append(`<option value="${department}">${department}</option>`);
+                            });
+                            $('#department').prop('disabled', false);
+                        })
+                        .fail(function() {
+                            alert('学類の取得に失敗しました。');
                         });
-                        $('#department').prop('disabled', false);
-                    });
                 } else {
                     $('#department').empty().append('<option value="">先に学群を選択してください</option>').prop('disabled', true);
                     $('#major').empty().append('<option value="">先に学類を選択してください</option>').prop('disabled', true);
@@ -63,13 +68,18 @@
             $('#department').on('change', function() {
                 const department = $(this).val();
                 if (department) {
-                    $.get('/majors', { department: department }, function(data) {
-                        $('#major').empty().append('<option value="">専攻を選択</option>');
-                        data.forEach(function(major) {
-                            $('#major').append(`<option value="${major}">${major}</option>`);
+                    $.get('/majors', { department: department })
+                        .done(function(data) {
+                            console.log(data); // データの確認
+                            $('#major').empty().append('<option value="">専攻を選択</option>');
+                            data.forEach(function(major) {
+                                $('#major').append(`<option value="${major}">${major}</option>`);
+                            });
+                            $('#major').prop('disabled', false);
+                        })
+                        .fail(function() {
+                            alert('専攻の取得に失敗しました。');
                         });
-                        $('#major').prop('disabled', false);
-                    });
                 } else {
                     $('#major').empty().append('<option value="">先に学類を選択してください</option>').prop('disabled', true);
                 }
