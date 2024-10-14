@@ -17,14 +17,14 @@ class AffiliationController extends Controller
     // 選択された学群に紐づく学類を取得
     public function getDepartments(Request $request)
     {
-        $departments = Affiliation::getDepartment($request->faculty); // 学類の一覧を取得
+        $departments = Affiliation::getDepartments($request->faculty); // 学類の一覧を取得
         return response()->json($departments);
     }
 
     // 選択された学類に紐づく専攻を取得
     public function getMajors(Request $request)
     {
-        $majors = Affiliation::getMajor($request->department); // 専攻の一覧を取得
+        $majors = Affiliation::getMajors($request->department); // 専攻の一覧を取得
         return response()->json($majors);
     }
 }

@@ -18,5 +18,5 @@ use App\Http\Controllers\AffiliationController;
 Route::get('/', [AffiliationController::class, 'showForm']);
 
 // 動的な選択肢を取得するためのルート
-Route::get('/department', [AffiliationController::class, 'getDepartments']);
-Route::get('/major', [AffiliationController::class, 'getMajors']);
+Route::get('/departments', [AffiliationController::class, 'getDepartments']);
+Route::get('/majors', [AffiliationController::class, 'getMajors']);
