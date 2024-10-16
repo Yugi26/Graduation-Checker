@@ -10,9 +10,9 @@
     <form action="/check" method="POST" enctype="multipart/form-data">
         @csrf
 
-        <label for="faculty">学群:</label>
+        <label for="faculty">学術院:</label>
         <select id="faculty" name="faculty">
-            <option value="">学群を選択</option>
+            <option value="">学術院を選択</option>
             @foreach ($faculties as $faculty => $departments)
                 <option value="{{ $faculty }}">{{ $faculty }}</option>
             @endforeach
@@ -20,16 +20,16 @@
 
         <br><br>
 
-        <label for="department">学類:</label>
+        <label for="department">研究群:</label>
         <select id="department" name="department" disabled>
-            <option value="">先に学群を選択してください</option>
+            <option value="">先に学術院を選択してください</option>
         </select>
 
         <br><br>
 
-        <label for="major">専攻:</label>
+        <label for="major">専攻-学位プログラム:</label>
         <select id="major" name="major" disabled>
-            <option value="">先に学類を選択してください</option>
+            <option value="">先に研究群を選択してください</option>
         </select>
 
         <br><br>
