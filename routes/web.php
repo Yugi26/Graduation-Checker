@@ -1,22 +1,17 @@
 <?php
 
-use App\Models\Affiliation;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GraduationController;
 use App\Http\Controllers\AffiliationController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
+// 学群・学類・専攻の選択フォームの表示php
 Route::get('/', [AffiliationController::class, 'showForm']);
 
-// 動的な選択肢を取得するためのルート
+// 学群に対応する学類を取得
 Route::get('/departments', [AffiliationController::class, 'getDepartments']);
+
+// 学類に対応する専攻を取得
 Route::get('/majors', [AffiliationController::class, 'getMajors']);
+
+// 卒業判定処理
+Route::post('/check', [GraduationController::class, 'checkRequirements']);
