@@ -41,6 +41,6 @@ URL:https://graduation-checker-1536df13f004.herokuapp.com/
 - 大学院だけでなく大学にも対応させる
 
 
-## ER図・ワイヤーフレームなど
+## アプリイメージ
 ![メイン画面](public/images/readme/メイン画面.png)
 ![判定結果](public/images/readme/判定結果.png)
