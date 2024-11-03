@@ -1,66 +1,46 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 卒業要件の達成状況の確認アプリ
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 概要
+所属を入力し、履修履歴CSVをアップロードすることで卒業要件の達成状況が分かります。
 
-## About Laravel
+今回は、1人で要件定義、フロント・バックエンド・デプロイを行いました。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 背景
+現在大学から卒業要件の達成状況を確認できるアプリが提供されておらず、学生は自分で一つずつ履修した授業と科目区分を紐づけて確認するか、年度末に実施される対面の卒業判定に赴かなければならず、手間がかかっています。  
+そのため、そのような手間を削減し、快適に卒業要件を満たせているか、また、満たすためには何が必要なのかを確認できるアプリを作成しました。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 使用技術
+PHP:8.2.14  
+Laravel:10.48.22  
+デプロイ：Heroku  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+[![使用技術アイコン](https://skillicons.dev/icons?i=php,laravel,heroku)](https://skillicons.dev)
 
-## Learning Laravel
+## URL
+URL:https://graduation-checker-1536df13f004.herokuapp.com/
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 機能
+- 卒業要件達成状況の確認  
+  - 必修科目と選択科目の達成状況の表示 
+  - 各科目区分ごとの詳細の表示
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 工夫点
+- CSVファイルはデータベースには保存せず、メモリ上で処理後に削除
+- 必要な列（科目コード、単位数、評価）のみを取得し、それ以外の個人情報を含む可能性のあるデータは無視
+- 正規表現による柔軟な卒業要件条件の設定
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 苦労した点
+- 卒業要件の多様な分類と条件設定
+- 他の学術院でも使用できるような一般的な卒業要件フォーマットの作成
 
-## Laravel Sponsors
+## 今後の展望
+- 対象学術院の拡大
+- 学期ごとの進捗の表示
+- 履修中の科目も含めた予測結果の表示
+- 単位が不足している科目区分の開設授業科目一覧へのリンク
+- 大学院だけでなく大学にも対応させる
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## ER図・ワイヤーフレームなど
+![メイン画面](public/images/readme/メイン画面.png)
+![判定結果](public/images/readme/判定結果.png)
