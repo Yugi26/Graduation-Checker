@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>学群・学類・専攻の選択</title>
+    <title>学術院・研究群・学位プログラムの選択</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <h1>学群・学類・専攻の選択（自動テスト）</h1>
+    <h1>学術院・研究群・学位プログラムの選択</h1>
     <form action="/check" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -27,7 +27,7 @@
 
         <br><br>
 
-        <label for="major">専攻-学位プログラム:</label>
+        <label for="major">学位プログラム:</label>
         <select id="major" name="major" disabled>
             <option value="">先に研究群を選択してください</option>
         </select>
