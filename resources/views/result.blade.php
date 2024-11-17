@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>卒業要件判定結果</title>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
     <h1>卒業要件判定結果</h1>
@@ -35,6 +36,7 @@
 
     <h2>総修得単位数</h2>
     <p>取得単位数: {{ $result['総修得単位数'] }} ({{ $requirements['選択合計'] }}単位以上必要)</p>
-    <p>判定: {{ $status['総修得単位数'] }}</p>
+    <h2>判定</h2>
+    <h3>{{ $status['総修得単位数'] }}</h3>
 </body>
 </html>
