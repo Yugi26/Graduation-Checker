@@ -1,46 +1,126 @@
+/* 全体の背景色を薄い紫に設定 */
 body {
-    background-color: #f5f3ff;
-    color: #4B0082;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f0ff; /* 薄い紫 */
+    color: #333; /* テキストを黒に */
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平方向の中央揃え */
+    justify-content: center; /* 垂直方向の中央揃え */
+    min-height: 100vh; /* 画面全体をカバー */
 }
 
-.header {
-    background-color: #6A0DAD;
-    padding: 20px;
+/* 見出しのスタイルと中央揃え */
+h1, h2, h3 {
+    color: #4b0082; /* 濃い紫 */
     text-align: center;
-    color: #fff;
+    margin-top: 20px;
 }
 
-.navbar {
-    background-color: #9370DB;
-    overflow: hidden;
-}
-
-.navbar a {
-    float: left;
-    display: block;
-    color: #fff;
+/* 段落の中央揃え */
+p {
     text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
+    margin: 10px 0;
 }
 
-.navbar a:hover {
-    background-color: #7B68EE;
+/* 表全体のスタイル */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.content {
-    padding: 20px;
-}
-
-.footer {
-    background-color: #6A0DAD;
-    color: #fff;
-    text-align: center;
+/* 表のヘッダーとセルのスタイル */
+table th, table td {
+    border: 1px solid #ccc;
     padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    text-align: center; /* 水平中央揃え */
+    vertical-align: middle; /* 垂直中央揃え */
+}
+
+/* 表ヘッダーの背景色と文字色 */
+table th {
+    background-color: #4b0082; /* 濃い紫 */
+    color: white;
+}
+
+/* 表データセルのデフォルト色 */
+table td {
+    color: #000; /* デフォルトは黒 */
+}
+
+/* ステータス「達成済」の場合の色変更 */
+table td.status-achieved {
+    color: #4b0082; /* 紫 */
+    font-weight: bold;
+}
+
+/* フォームの中央揃え */
+form {
+    background-color: #ffffff; /* 白背景 */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* フォーム内部の要素を中央揃え */
+    width: 80%;
+    max-width: 600px; /* 最大幅を指定 */
+}
+
+/* フォーム内のラベル */
+label {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #4b0082;
+}
+
+/* セレクトボックスとファイル入力 */
+select, input[type="file"] {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+    text-align: center; /* テキストの中央揃え */
+}
+
+/* ボタンのスタイル */
+button {
+    display: block;
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #4b0082; /* 濃い紫 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a0066; /* より濃い紫 */
+}
+
+/* フッターのスタイル */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f5f0ff;
+    color: #4b0082;
+    font-size: 0.9em;
+    border-top: 1px solid #ccc;
 }
