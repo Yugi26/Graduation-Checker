@@ -28,7 +28,9 @@
                     <td>{{ $category }}</td>
                     <td>{{ $requirements['選択'][$category]['required_units'] }}</td>
                     <td>{{ $units }}</td>
-                    <td>{{ $status[$category] }}</td>
+                    <td class="{{ $status[$category] === '達成済' ? 'status-achieved' : '' }}">
+                        {{ $status[$category] }}
+                    </td>
                 </tr>
             @endforeach
         </tbody>
