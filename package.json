@@ -3,6 +3,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "heroku-postbuild": "npm run build",
         "build": "vite build"
     },
     "devDependencies": {
